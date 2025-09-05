@@ -28,7 +28,7 @@ const ImageSelector = ({ onSelect, confidenceThreshold = 0 }) => {
 
   useEffect(() => {
     // Load the PGE data
-    fetch('/pge-data.json')
+    fetch(process.env.REACT_APP_DATA_URL)
       .then(response => {
         if (!response.ok) {
           throw new Error(`Failed to load data: ${response.status} ${response.statusText}`);
